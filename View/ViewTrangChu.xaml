@@ -1,0 +1,90 @@
+﻿<Window x:Class="DALTUDTXDHONG.View.ViewTrangChu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DALTUDTXDHONG.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="ViewTrangChu" Height="700" Width="1000" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="135"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Ribbon x:Name="rbncontrol" 
+         Background="{StaticResource ChuDao3}" Opacity="1" Foreground="#000">
+            <Ribbon.ApplicationMenu >
+                <RibbonApplicationMenu KeyTip="F" SmallImageSource="\Resources\Icons\Menu.png" Background="{StaticResource ChuDao2}" >
+                    <RibbonApplicationMenuItem ImageSource="\Resources\Icons\User.png" Header="Tài khoản" Width="150"/>
+                    <RibbonApplicationMenuItem ImageSource="\Resources\Icons\Logout.png" Header="Đăng xuất" Width="150"/>
+                    <RibbonApplicationMenuItem ImageSource="\Resources\Icons\Settings.png" Header="Cài đặt" Width="150"/>
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+            <RibbonTab Header="Tiết diện"
+               BorderThickness="0 0 0 1"
+               x:Name="tab_TietDien">
+                <RibbonGroup Header="Material"
+                     Foreground="Black">
+                    <Button Background="{StaticResource ChuDao3}" Height="60" x:Name="btnVatLieu" Click="btnVatLieu_Click">
+                        <StackPanel>
+                            <Image Source="/Resources/Anh/steel.jpg" Width="30"/>
+                            <TextBlock>
+                                Material
+                            </TextBlock>
+                        </StackPanel>
+                    </Button> 
+                </RibbonGroup>
+                <RibbonGroup Header="Thông số cột">
+                    <Button Background="{StaticResource ChuDao3}" Height="60" x:Name="btnThongSoCot" Click="btnThongSoCot_Click">
+                        <StackPanel>
+                            <Image Source="/Resources/Anh/5672201.png" Width="30"/>
+                            <TextBlock>
+                                Column parameters
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Background="{StaticResource ChuDao3}" Height="60" x:Name="btnTietDien" Click="btnTietDien_Click">
+                        <StackPanel>
+                            <Image Source="/Resources/Anh/i.png" Width="20"/>
+                            <TextBlock>
+                                Sections
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="Tính Toán"
+                    BorderThickness="0 0 0 1"
+                    x:Name="tab_TinhToan">
+                <RibbonGroup Header="Tính toán"
+                    Foreground="Black">
+                    <Button Height="60" x:Name="btnTinhToanKNCNLechTam" Click="btnTinhToanKNCNLechTam_Click">
+                        <StackPanel>
+                            <Image Source="/Resources/Anh/suc.jpg" Width="35" Height="35"/>
+                            <TextBlock>
+                                KN chịu nén lệch tâm
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+                </RibbonGroup>
+            </RibbonTab>
+
+            <RibbonTab Header="Báo cáo"
+                BorderThickness="0 0 0 1"
+                x:Name="tab_BaoCao">
+                <RibbonGroup Header="Xuất kết quả"
+                Foreground="Black">
+                    <Button Height="60">
+                        <StackPanel>
+                            <materialDesign:PackIcon Height="30" Width="30" Kind="MicrosoftExcel" HorizontalAlignment="Center"/>
+                            <TextBlock>
+                                Excel
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+        <Frame x:Name="frame_Body" Grid.Row="1"></Frame>
+    </Grid>
+</Window>
